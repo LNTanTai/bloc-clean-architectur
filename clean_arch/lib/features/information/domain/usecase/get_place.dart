@@ -4,15 +4,15 @@ import 'package:clean_arch/features/information/domain/entities/place.dart';
 import 'package:clean_arch/features/information/domain/repository/place_repository.dart';
 
 class GetPlaceUsecase implements Usecase<PlaceEntity, void> {
-  final PlaceRepository? placeRepository;
+  final PlaceRepository placeRepository;
   
   GetPlaceUsecase({
-   this.placeRepository,
+   required this.placeRepository,
   });
 
   @override
   Future<PlaceEntity> call({void params}) {
-    return placeRepository!.getPlaceInfor();
+    return placeRepository.getPlaceInfor();
   }
   
 }

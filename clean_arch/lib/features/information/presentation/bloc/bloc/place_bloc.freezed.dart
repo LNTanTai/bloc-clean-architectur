@@ -470,8 +470,6 @@ abstract class _$$_PlaceLoadedCopyWith<$Res> {
       __$$_PlaceLoadedCopyWithImpl<$Res>;
   @useResult
   $Res call({PlaceEntity? placeEntity});
-
-  $PlaceEntityCopyWith<$Res>? get placeEntity;
 }
 
 /// @nodoc
@@ -493,18 +491,6 @@ class __$$_PlaceLoadedCopyWithImpl<$Res>
           : placeEntity // ignore: cast_nullable_to_non_nullable
               as PlaceEntity?,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $PlaceEntityCopyWith<$Res>? get placeEntity {
-    if (_value.placeEntity == null) {
-      return null;
-    }
-
-    return $PlaceEntityCopyWith<$Res>(_value.placeEntity!, (value) {
-      return _then(_value.copyWith(placeEntity: value));
-    });
   }
 }
 
