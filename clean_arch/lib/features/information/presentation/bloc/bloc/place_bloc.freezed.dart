@@ -167,7 +167,7 @@ abstract class _Started implements PlaceEvent {
 mixin _$PlaceState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity) $default, {
+    TResult Function(List<PlaceEntity>? placeEntity) $default, {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
@@ -175,7 +175,7 @@ mixin _$PlaceState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(PlaceEntity? placeEntity)? $default, {
+    TResult? Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
@@ -183,7 +183,7 @@ mixin _$PlaceState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity)? $default, {
+    TResult Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
@@ -273,7 +273,7 @@ class _$PlaceInitial implements PlaceInitial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity) $default, {
+    TResult Function(List<PlaceEntity>? placeEntity) $default, {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
@@ -284,7 +284,7 @@ class _$PlaceInitial implements PlaceInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(PlaceEntity? placeEntity)? $default, {
+    TResult? Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
@@ -295,7 +295,7 @@ class _$PlaceInitial implements PlaceInitial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity)? $default, {
+    TResult Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
@@ -387,7 +387,7 @@ class _$PlaceLoading implements PlaceLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity) $default, {
+    TResult Function(List<PlaceEntity>? placeEntity) $default, {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
@@ -398,7 +398,7 @@ class _$PlaceLoading implements PlaceLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(PlaceEntity? placeEntity)? $default, {
+    TResult? Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
@@ -409,7 +409,7 @@ class _$PlaceLoading implements PlaceLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity)? $default, {
+    TResult Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
@@ -469,7 +469,7 @@ abstract class _$$_PlaceLoadedCopyWith<$Res> {
           _$_PlaceLoaded value, $Res Function(_$_PlaceLoaded) then) =
       __$$_PlaceLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({PlaceEntity? placeEntity});
+  $Res call({List<PlaceEntity>? placeEntity});
 }
 
 /// @nodoc
@@ -487,9 +487,9 @@ class __$$_PlaceLoadedCopyWithImpl<$Res>
   }) {
     return _then(_$_PlaceLoaded(
       freezed == placeEntity
-          ? _value.placeEntity
+          ? _value._placeEntity
           : placeEntity // ignore: cast_nullable_to_non_nullable
-              as PlaceEntity?,
+              as List<PlaceEntity>?,
     ));
   }
 }
@@ -497,10 +497,18 @@ class __$$_PlaceLoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PlaceLoaded implements _PlaceLoaded {
-  const _$_PlaceLoaded(this.placeEntity);
+  const _$_PlaceLoaded(final List<PlaceEntity>? placeEntity)
+      : _placeEntity = placeEntity;
 
+  final List<PlaceEntity>? _placeEntity;
   @override
-  final PlaceEntity? placeEntity;
+  List<PlaceEntity>? get placeEntity {
+    final value = _placeEntity;
+    if (value == null) return null;
+    if (_placeEntity is EqualUnmodifiableListView) return _placeEntity;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -512,12 +520,13 @@ class _$_PlaceLoaded implements _PlaceLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PlaceLoaded &&
-            (identical(other.placeEntity, placeEntity) ||
-                other.placeEntity == placeEntity));
+            const DeepCollectionEquality()
+                .equals(other._placeEntity, _placeEntity));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, placeEntity);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_placeEntity));
 
   @JsonKey(ignore: true)
   @override
@@ -528,7 +537,7 @@ class _$_PlaceLoaded implements _PlaceLoaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity) $default, {
+    TResult Function(List<PlaceEntity>? placeEntity) $default, {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
@@ -539,7 +548,7 @@ class _$_PlaceLoaded implements _PlaceLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(PlaceEntity? placeEntity)? $default, {
+    TResult? Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
@@ -550,7 +559,7 @@ class _$_PlaceLoaded implements _PlaceLoaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity)? $default, {
+    TResult Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
@@ -601,9 +610,10 @@ class _$_PlaceLoaded implements _PlaceLoaded {
 }
 
 abstract class _PlaceLoaded implements PlaceState {
-  const factory _PlaceLoaded(final PlaceEntity? placeEntity) = _$_PlaceLoaded;
+  const factory _PlaceLoaded(final List<PlaceEntity>? placeEntity) =
+      _$_PlaceLoaded;
 
-  PlaceEntity? get placeEntity;
+  List<PlaceEntity>? get placeEntity;
   @JsonKey(ignore: true)
   _$$_PlaceLoadedCopyWith<_$_PlaceLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -647,7 +657,7 @@ class _$PlaceError implements PlaceError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity) $default, {
+    TResult Function(List<PlaceEntity>? placeEntity) $default, {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
@@ -658,7 +668,7 @@ class _$PlaceError implements PlaceError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(PlaceEntity? placeEntity)? $default, {
+    TResult? Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? error,
@@ -669,7 +679,7 @@ class _$PlaceError implements PlaceError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(PlaceEntity? placeEntity)? $default, {
+    TResult Function(List<PlaceEntity>? placeEntity)? $default, {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,

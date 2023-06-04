@@ -36,9 +36,9 @@ class _PlaceViewState extends State<PlaceView> {
         }));
   }
 
-  Widget buildCard(BuildContext context, PlaceEntity model) {
+  Widget buildCard(BuildContext context, List<PlaceEntity> model) {
     return ListView.builder(
-      itemCount: 1,
+      itemCount: model.length,
       itemBuilder: (context, index) {
         return Container(
           margin: const EdgeInsets.all(8.0),
@@ -47,11 +47,11 @@ class _PlaceViewState extends State<PlaceView> {
               margin: const EdgeInsets.all(8.0),
               child: Column(
                 children: <Widget>[
-                  Text("Tỉnh/ Thủ đô: ${model.name}"),
-                  Text("code: ${model.code}"),
-                  Text("division_type: ${model.divisionType}"),
-                  Text("codename: ${model.codename}"),
-                  Text("phone_code: ${model.phoneCode}"),
+                  Text("Tỉnh/ Thủ đô: ${model[index].name}"),
+                  Text("code: ${model[index].code}"),
+                  Text("division_type: ${model[index].divisionType}"),
+                  Text("codename: ${model[index].codename}"),
+                  Text("phone_code: ${model[index].phoneCode}"),
                 ],
               ),
             ),

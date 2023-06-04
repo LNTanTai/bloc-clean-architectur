@@ -14,7 +14,7 @@ class PlaceBloc extends Bloc<PlaceEvent, PlaceState> {
     on<PlaceEvent>((event, emit) async {
       try {
         emit(const PlaceState.loading());
-        PlaceEntity data = await repository.getPlaceInfor();
+        List<PlaceEntity> data = await repository.getPlaceInfor();
         emit(PlaceState(data));
       } catch (e) {
         emit(const PlaceState.error());

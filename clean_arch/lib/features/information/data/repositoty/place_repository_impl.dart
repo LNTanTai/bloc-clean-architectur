@@ -5,7 +5,7 @@ import 'package:clean_arch/features/information/domain/repository/place_reposito
 class PlaceRepositoryImpl implements PlaceRepository{
   final PlaceApi placeApi = PlaceApi();
   @override
-  Future<PlaceEntity> getPlaceInfor() async{
+  Future<List<PlaceEntity>> getPlaceInfor() async{
     return await placeApi.getPlaceInfor();
   }
 }

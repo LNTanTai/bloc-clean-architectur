@@ -4,7 +4,7 @@ part of 'place_bloc.dart';
 class PlaceState with _$PlaceState {
   const factory PlaceState.initial() = PlaceInitial;
   const factory PlaceState.loading() = PlaceLoading;
-  const factory PlaceState(PlaceEntity ?placeEntity) = _PlaceLoaded;
+  const factory PlaceState(List<PlaceEntity> ?placeEntity) = _PlaceLoaded;
   // const factory PlaceState(PlaceEntity ?playEntity) = _PlaceState
   const factory PlaceState.error() = PlaceError;
 }
